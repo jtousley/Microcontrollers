@@ -1,0 +1,65 @@
+ECE 3710 Microcontrollers
+Dr. Ryan Gerdes
+TA: Samuel Tanner
+by:
+Jonathan Tousley
+Lab0
+
+About the M4C123GH6PM Microcontroller:
+1. 
+a) Section 2.3.3 describes the M4's memory map
+b) Table 2-2 gives the memory map of the M4's processor
+
+2.
+GPIO_A has base memory address 0x4000.4000
+
+3.
+a) Section 10.4 describes the GPIO register map
+b) Table 10-6 gives the GPIO register map
+
+4.
+Register 2 corresponds to the direction of GPIO ports. 
+It's memory offset is 0x400, so for GPIO port A's direction register the memory address is 0x4000.4400.
+
+5.
+a) Binary value of 1 corresponds to output.
+b) 7:0 = 1001 0001
+c) 7:0 = 0x6E
+
+6.
+Timer 2 is located at memory address 0x4003.2000.
+
+7.
+Register 26 (GPTMTBPV) is located at offset 0x068. This register shows the current free running value of the Timer B prescaler.
+
+8.
+Pins in group 3,12,27,39,55 and 25,56 and 2,11,26,42,54 and 34,35 are wired together.
+
+Introduction to the MDO3014 Mixed Domain Oscilloscope:
+1. Potential uses of a logic analyzer:
+	- Debugging a microprocessor
+	- Monitor digital circuits
+	- View logic states
+
+2.
+a) Push the `trigger menu` button -> select Type:`edge`, and slope:`falling`.
+b) Push the `trigger menu` button -> select Type:`edge`, and slope:`rising`.
+
+3.
+Adjust the sample rate by turning the horizontal scale knob.
+
+Using the Analog Comparator of the TM4C123GH6PM Microcontroller:
+2.
+Comparator (Vin) -> PC4
+Light -> PF1
+
+3.
+The ACREFCTL register stores internal reference information.
+
+4.
+The ACREFCTL register has a VREF value stored as an 8 bit value, and single bits RNG and EN.
+
+5.
+RNG = 1;
+VREF = 0x07;
+The light will be on between .971 and 1.118 V (.971, 1.118).

@@ -1,0 +1,5 @@
+Questions?
+
+1. Range for the DAC: 2.7-5.5V
+2. A0 is the address of the DAC for I2C. We will use A0 = 1, so the I2C address for the DAC will be 0110 0011 (0x63).
+3. Need schematic
