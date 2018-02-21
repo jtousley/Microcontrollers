@@ -1,3 +1,6 @@
+#ifndef GPIO_H
+#define GPIO_H
+
 typedef struct{
 	volatile unsigned int _0:1,_1:1,_2:1,_3:1,_4:1,_5:1,_6:1,_7:1,
 	_8:1,_9:1,_10:1,_11:1,_12:1,_13:1,_14:1,_15:1,
@@ -47,3 +50,39 @@ typedef struct{
 	REG AMSEL; //0x528
 	REG PCTL; //0x52C
 }GPIO;
+
+typedef struct{
+	REG CTL; //0x000
+	REG STS; //0x004
+	REG ERR; //0x008
+	REG BIT; //0x00C
+	REG INT; //0x010
+	REG TST; //0x014
+	REG BRPE; //0x018
+	volatile unsigned char RES1[4];
+	REG CRQ ; //0x020
+	REG CMSK; //0x024
+	REG MSK1; //0x028
+	REG MSK2; //0x02C
+	REG ARB1; //0x030
+	REG ARB2; //0x034
+	REG MCTL; //0x038
+	REG DA1 ; //0x03C
+	REG DA2 ; //0x040
+	REG DB1 ; //0x044
+	REG DB2 ; //0x048
+	volatile unsigned char RES2[0x32];
+	REG CRQR ; //0x080
+	REG CMSKR; //0x084
+	REG MSK1R; //0x088
+	REG MSK2R; //0x08C
+	REG ARB1R; //0x090
+	REG ARB2R; //0x094
+	REG MCTLR; //0x098
+	REG DA1R ; //0x09C
+	REG DA2R ; //0x0A0
+	REG DB1R ; //0x0A4
+	REG DB2R ; //0x0A8
+}CAN;
+
+#endif //GPIO.h
